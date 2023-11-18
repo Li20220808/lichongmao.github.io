@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+
+    
+<script>!function(){document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>杂项</title>
+<meta name="keywords" content="杂项, 李重茂的个人博客（测试）">
+<meta name="description" content="杂项1.ssh使用
+主动连接机器为A，被连接机器为B
+连接命令为（灰色背景为待填项）：
+
+ssh user_name@remotehost
+
+说明：
+1.user_name 为B机用户名，是B机系统安装时用户自己设置的。一般为了避免对B机系">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="杂项">
+<meta property="og:description" content="杂项1.ssh使用
+主动连接机器为A，被连接机器为B
+连接命令为（灰色背景为待填项）：
+
+ssh user_name@remotehost
+
+说明：
+1.user_name 为B机用户名，是B机系统安装时用户自己设置的。一般为了避免对B机系">
+
+<link rel="shortcut icon" href="/images/avatar.png">
+<link rel="stylesheet" href="/style/main.css">
+
+  <link rel="stylesheet" href="/style/simple-lightbox.min.css"><meta name="generator" content="Hexo 7.0.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://wuusoon.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://wuusoon.github.io">
+        <h1 class="site-title">李重茂的个人博客（测试）</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="https://wuusoon.github.io/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">杂项</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-11-18</span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><p>1.ssh使用</p>
+<p>主动连接机器为A，被连接机器为B</p>
+<p>连接命令为（灰色背景为待填项）：</p>
+<blockquote>
+<p>ssh <code>user_name</code>@<code>remotehost</code></p>
+</blockquote>
+<p>说明：</p>
+<p>1.user_name 为B机用户名，是B机系统安装时用户自己设置的。一般为了避免对B机系统造成损害不使用root，而且直接用root连也连不上，因为需要修改B机sshd相关配置（通常是 <code>/etc/ssh/sshd_config</code> ）</p>
+<p>2.remotehost 为B机ip地址。可在B机使用 <code>ifconfig</code> 查看。安装 <code>net-tools</code> 包实现该命令（一般linux系统都会自带这个包）</p>
+<p>为实现成功连接需要满足以下要求：</p>
+<p>1.AB机均安装了ssh （检查命令为：<code>yay -Q openssh</code>）</p>
+<p>2.B机sshd.service运行中（检查命令为：<code>systemctl status sshd</code>）</p>
+<p>3.若AB机为网线连接（没有连同一个wifi处于局域网下），则B机本地连接后，在A机应用下图处理（即IPv4设置——&gt;方法：仅本地链路）：</p>
+<p><a class="simple-lightbox" href="/%E6%9D%82%E9%A1%B9_image.png"><img   src="/images/loading.svg" data-src="/%E6%9D%82%E9%A1%B9_image.png"  lazyload></a><a class="simple-lightbox" href="/1_%E6%9D%82%E9%A1%B9_image.png"><img   src="/images/loading.svg" data-src="/1_%E6%9D%82%E9%A1%B9_image.png"  lazyload></a></p>
+<p>2.arch安装</p>
+<p>全文教程：<br>1.<a target="_blank" rel="noopener" href="https://u.sb/archlinux-archinstall/">https://u.sb/archlinux-archinstall/</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://arch.icekylin.online/guide/rookie/basic-install.html">https://arch.icekylin.online/guide/rookie/basic-install.html</a></p>
+<p>安装arch前连接wifi<br><a target="_blank" rel="noopener" href="https://www-debugpoint-com.translate.goog/connect-wifi-terminal-linux/?%5C_x%5C_tr%5C_sl=auto&%5C_x%5C_tr%5C_tl=en&%5C_x%5C_tr%5C_hl=en#Method\_2\_Using\_iwd">https://www-debugpoint-com.translate.goog/connect-wifi-terminal-linux/?\_x\_tr\_sl=auto&amp;\_x\_tr\_tl=en&amp;\_x\_tr\_hl=en#Method\_2\_Using\_iwd</a></p>
+<p>格式化磁盘相关命令<br>gdisk &#x2F;dev&#x2F;sdaX（X为待填项，也可不填：即<code>gdisk /dev/sda</code>）<br>x<br>z</p>
+
+        </div>
+          
+        <div class="top-div">
+          <ol class="top-box"><li class="top-box-item top-box-level-1"><a class="top-box-link" href="#%E6%9D%82%E9%A1%B9"><span class="top-box-text">杂项</span></a></li></ol>
+        </div>
+          
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/11/18/hello-world/">
+          <h3 class="post-title">
+            下一篇：Hello World
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+    <div id="gitalk-container"></div>
+
+
+
+    <link rel="stylesheet" href="/style/gitalk.min.css"/>
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        const config = {"clientId":"55aa034562160eb6f0c8","clientSecret":"ac77fffe099bd854f45fc48b1d85572955b7bd41","repository":"test","owner":"wuusoon","createIssueManually":true};
+        const gitalk = new Gitalk({
+            clientID: config.clientId,
+            clientSecret: config.clientSecret,
+            repo: config.repository,
+            owner: config.owner,
+            admin: [config.owner],
+            id: location.pathname.slice(1, location.pathname.lastIndexOf('/')).substring(0, 49),       // Ensure uniqueness and length less than 50
+            distractionFreeMode: false,  // Facebook-like distraction free mode
+            createIssueManually: config.createIssueManually ? true : false
+        });
+
+        gitalk.render('gitalk-container')
+
+    </script>
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/wuusoon" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            <span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  <script src="/js/simple-lightbox.min.js"></script><script>document.addEventListener('DOMContentLoaded', function() {new SimpleLightbox('.post-detail .simple-lightbox', {fileExt: false,captionsData:'alt'});});</script></body>
+</html>
+
